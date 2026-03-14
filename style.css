@@ -1,7 +1,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "JetBrainsMono Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 18px;
 }
 
 window#waybar {
@@ -97,6 +97,8 @@ button:hover {
     margin: 0 4px;
 }
 
+
+
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
@@ -107,18 +109,18 @@ button:hover {
     margin-right: 0;
 }
 
-#clock {
-    background-color: #64727D;
-}
+/* #clock { */
+/*     background-color: #64727D; */
+/* } */
 
-#battery {
-    background-color: #ffffff;
-    color: #000000;
-}
+/* #battery { */
+/*     background-color: #ffffff; */
+/*     color: #000000; */
+/* } */
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+    color: #26A65B;
+    /* background-color: #26A65B; */
 }
 
 @keyframes blink {
@@ -142,35 +144,65 @@ label:focus {
     background-color: #000000;
 }
 
-#cpu {
-    background-color: #2ecc71;
-    color: #000000;
+
+#waybar {
+  background: transparent;
+  color: #cdd6f4;
 }
 
-#memory {
-    background-color: #9b59b6;
+#clock,
+#cpu,
+#memory,
+#pulseaudio,
+#network,
+#battery,
+#tray,
+#window,
+#workspaces {
+  background: transparent;
+  box-shadow: none;
+  border: none;
 }
+
+#clock { color: #89b4fa; }
+#cpu { color: #f38ba8; }
+#memory { color: #a6e3a1; }
+#pulseaudio { color: #fab387; }
+#network { color: #94e2d5; }
+#battery { color: #f9e2af; }
+#window { color: #cba6f7; }
+#tray { color: #74c7ec; }
+
+
+/* #cpu { */
+/*     background-color: #2ecc71; */
+/*     color: #000000; */
+/* } */
+
+/* #memory { */
+/*     background-color: #9b59b6; */
+/* } */
 
 #disk {
-    background-color: #964B00;
+    color: #964B00;
 }
 
 #backlight {
-    background-color: #90b1b1;
+    color: #90b1b1;
 }
 
-#network {
-    background-color: #2980b9;
-}
+/* #network { */
+/*     background-color: #2980b9; */
+/* } */
 
 #network.disconnected {
-    background-color: #f53c3c;
+    color: #f53c3c;
 }
 
-#pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
-}
+/* #pulseaudio { */
+/*     background-color: #f1c40f; */
+/*     color: #000000; */
+/* } */
 
 #pulseaudio.muted {
     background-color: #90b1b1;
@@ -201,16 +233,16 @@ label:focus {
 }
 
 #temperature {
-    background-color: #f0932b;
+    color: #f0932b;
 }
 
 #temperature.critical {
-    background-color: #eb4d4b;
+    color: #eb4d4b;
 }
 
-#tray {
-    background-color: #2980b9;
-}
+/* #tray { */
+/*     background-color: #2980b9; */
+/* } */
 
 #tray > .passive {
     -gtk-icon-effect: dim;
