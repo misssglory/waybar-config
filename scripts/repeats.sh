@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-HIST_FILE="${HIST_FILE:-/home/mg/sh/output_history.log}"
+HIST_FILE="${HIST_FILE:-~/.config/waybar/scripts/output_history.log}"
 
 if (($# == 0)); then
     echo "Usage: $0 command [args...]"
@@ -21,8 +21,6 @@ fi
 if [[ "$current" != "$last" ]]; then
     printf '%s\n' "$current" >> "$HIST_FILE"
 fi
-
-printf '%s\n' "$current"
 
 prev1=""
 prev2=""
@@ -49,5 +47,8 @@ if [[ -s "$HIST_FILE" ]]; then
     done
 fi
 
-[[ -n "$prev1" ]] && printf '%s\n' "$prev1"
-[[ -n "$prev2" ]] && printf '%s\n' "$prev2"
+parts=("$current")
+[[ -n "$prev1" ]] && parts+=("$prev1")
+[[ -n "$prev2" ]] && parts+=("$prev2")
+
+printf '%s\n' "${parts[*]}"
