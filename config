@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["dwl/tags", "custom/media", "custom/solbalance"],
     "modules-center": ["dwl/tags", "dwl/window"],
-    "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "battery", "battery#bat2", "clock", "tray"],
+    "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "battery", "battery#bat2", "clock#local", "clock#utc", "disk", "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -88,6 +88,12 @@
             "deactivated": ""
         }
     },
+    "disk": {
+        "interval": 30,
+        "path": "/",
+        "format": "{free} 🖴", // Displays percentage free
+        "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)"
+    },
     "tray": {
         // "icon-size": 21,
         "spacing": 10
@@ -98,11 +104,18 @@
     //     "format-alt": "{:%Y-%m-%d}",
     //     "interval": 1
     // },
-    "clock": {
+    "clock#local": {
       "interval": 1,
-      "format": "{:%Y %m %d %H:%M:%S}",
-      "tooltip-format": "{:%A, %d %B %Y %H:%M:%S}",
+      "format": "{:%Y %m %d %H:%M:%S %Z}",
+     // "tooltip-format": "{:%A, %d %B %Y %H:%M:%S}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
       "tooltip": true
+    },
+    "clock#utc": {
+        "timezone": "Etc/UTC",
+        "format": "{:%H:%M %Z}",
+        "tooltip-format": "<big>{:%Y %B}</big>\\n<tt><small>{calendar}</small></tt>",
+        "interval": 1
     },
 
     "cpu": {
