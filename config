@@ -5,8 +5,10 @@
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["dwl/tags", "custom/media"],
-    "modules-center": ["dwl/tags", "dwl/window"],
+    //"modules-left": ["dwl/tags", "custom/media"],
+    //"modules-center": ["dwl/tags", "dwl/window"],
+    "modules-left": [],
+    "modules-center": [],
     "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "battery", "battery#bat2", "clock#local", "clock#utc", "disk", "tray"],
     // Modules configuration
     // "sway/workspaces": {
